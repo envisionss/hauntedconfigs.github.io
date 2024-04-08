@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      background: #000;
+      text-align: center;
+    }
+
+    h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: red; /* Initial color */
+      opacity: 0;
+      transition: opacity 1s, color 2s; /* Added color transition */
+    }
+
+    button {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 25px;
+      padding: 10px 20px;
+      font-size: 18px;
+      background: #171717;
+      color: #fff;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>7haunts Free Configs Are Now Here!</h1>
+
+  <button>Configs Here</button>
+
+  <script>
+    const text = document.querySelector('h1');
+    const button = document.querySelector('button');
+    let colors = ['red', 'blue', 'purple']; // List of colors
+    let index = 0; // Index to iterate through colors
+
+    setTimeout(() => {
+      text.style.opacity = 1;
+      button.style.opacity = 1;
+      setInterval(() => {
+        text.style.color = colors[index]; // Change text color
+        index = (index + 1) % colors.length; // Increment index or reset
+      }, 2000); // Change color every 2 seconds
+    }, 100);
+
+  </script>
+
+</body>
+
+</html>
